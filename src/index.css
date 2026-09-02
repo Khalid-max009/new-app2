@@ -1,0 +1,207 @@
+ *{
+  padding: 0px;
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+ }
+ .container{
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 500px;
+
+ }
+ .container h2{
+  font-size: 32px;
+  color: green;
+  margin-bottom: 30px;
+ }
+ form{
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+
+ }
+ .first {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+ 
+ }
+ .first label{
+  font-size: 18px;
+  
+
+ }
+ .first input{
+  margin-left: auto;
+  padding: 10px 15px;
+  width: 250px;
+  border-radius: 7px;
+  border-style: solid;
+  font-size: 18px;
+
+ 
+
+ }
+ button{
+  padding: 10px 12px;
+  width: fit-content;
+  margin: auto;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  background-color: green;
+  margin-bottom: 20px;
+  font-size: 18px;
+ }
+ .content {
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 500px;
+  
+ }
+ .content h2 {
+  font-size: 32px;
+  color: green;
+  margin-bottom: 30px;
+ }
+  
+ 
+ .second {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+ }
+ .second label {
+  font-size: 18px;
+ }
+ .second input{
+  margin-left: auto;
+  padding: 10px 15px;
+  width: 250px;
+  border-radius: 7px;
+  border-style: solid;
+  font-size: 18px;
+
+ }
+ .box{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  top: 0px;
+  position: absolute;
+  background-color: aliceblue;
+  width: 100%;
+ }
+ header{
+  justify-content: space-between;
+  font-size: 18px;
+  padding: 0px 30px;
+  display: flex;
+  gap: 3opx;
+  align-items: center;
+  width: 100%;
+ }
+ header div{
+  color: purple;
+ }
+ nav{
+  display: flex;
+ 
+  gap: 40px;
+  color: purple;
+ }
+ nav a{
+  text-decoration: none;
+  color: purple;
+ }
+ .ari{
+  padding: 7px 10px;
+  background-color: snow;
+  color: purple;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  border-style: solid;
+ }
+
+ main{
+  display: flex;
+  margin-top: 50px;
+  margin: 50px 125px;
+  width: calc(100% - 250px);
+  flex-direction: column;
+  gap: 40px;
+ }
+ .fir{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 30px 20px;
+  gap: 25px;
+  border: none;
+  border-radius: 12px;
+  background-color: purple;
+ }
+ .fir h2 {
+  color: white;
+  font-size: 32px;
+ }
+ .fir p{
+  color: white;
+  font-size: 16px;
+ }
+ .sec{
+  display: flex;
+  gap: 20px;
+  width: 100%;
+ }
+ .secin{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px 15px;
+  gap: 20px;
+  
+  border-radius: 12px;
+  width:  calc((100% - 40px)/ 3);
+ }
+ .secin h2{
+  font-size: 25px;
+ }
+ .secin p{
+  font-size: 18px;
+  font-weight: bold;
+ }
+ .last {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+ }
+ .last h3{
+  font-size: 24px;
+ }
+ .inner{
+  display: flex;
+  gap: 20px;
+  
+   
+ }
+ .fools{
+  padding: 10px 15px;
+  background-color: white;
+  color: purple;
+  font-size: 17px;
+  border-radius: 8px;
+  cursor: pointer;
+ 
+ }
