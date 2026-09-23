@@ -68,11 +68,12 @@ return (
       />
     </div>
     
-    <button type ="submit" disabled={loading}>
+    <button  type ="submit" disabled={loading}>
       {loading? "Signing Up..." : "Sign Up"}
 
     </button>
     {error && <p className='error'>{error}</p>}
+    <Link to="/login">Already have an account? Login</Link>
  </form>
   </div>
 )

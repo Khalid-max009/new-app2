@@ -102,25 +102,25 @@
   background-color: aliceblue;
   width: 100%;
  }
- header{
+ .third{
   justify-content: space-between;
   font-size: 18px;
   padding: 0px 30px;
   display: flex;
-  gap: 3opx;
+  gap: 30px;
   align-items: center;
   width: 100%;
  }
- header div{
+ .third div{
   color: purple;
  }
- nav{
+ .fourth{
   display: flex;
  
   gap: 40px;
   color: purple;
  }
- nav a{
+ .fourth a{
   text-decoration: none;
   color: purple;
  }
@@ -193,7 +193,7 @@
  .inner{
   display: flex;
   gap: 20px;
-  
+  flex-direction: row;
    
  }
  .fools{
@@ -204,4 +204,177 @@
   border-radius: 8px;
   cursor: pointer;
  
+ 
  }
+.fifth{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  width: 100%;
+ }
+ .fifth h1{
+  color: purple;
+ }
+ .nav{
+  display: flex;
+  gap: 20px;
+ }
+ .nav a{
+  text-decoration: none;
+  font-size: 18px;
+ }
+ .products-grid{
+  display: flex;
+  flex-direction: column;
+ margin-left: 20px;
+  font-size: 18px;
+  background-color: aliceblue;
+
+ }
+ .products-grid img{
+  width: 550px;
+  height: 700px;
+  margin-bottom: 20px;
+
+ }
+ .product-details{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 12px;
+  width: fit-content;
+ }
+ 
+.Addproduct{
+  display: flex;
+  background-color: aliceblue;
+  
+  align-items: center;
+  gap: 30px;
+  flex-direction: column;
+
+  min-height: 100vh;
+
+
+}
+.aain{
+  display: flex;
+ justify-content: space-between;
+  gap: 20px;
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+  margin-top: 0px;
+ 
+}
+.sixth{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  
+
+}
+.sixth a{
+  text-decoration: none;
+  padding: 10px 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 12px;
+
+}
+.ben{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 18px;
+}
+.ben input {
+  margin-left: auto;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: blue;
+  font-size: 18px;
+  
+}
+.ben textarea{
+  margin-left: 25px;
+   padding: 10px 12px;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: blue;
+  font-size: 18px;
+  width: 250px;
+}
+.hh{
+  font-size: 24px;
+  
+ 
+}
+.products-grid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  flex-direction: row;
+
+}
+.product-card{
+  display: flex;
+  flex-direction: column;
+ 
+  background-color: white;
+  justify-content: center;
+  padding: 10px 15px;
+  border-radius: 12px;
+  width: calc((100% - 40px)/4);
+}
+.product-card img{
+  width: 100%;
+  height: 300px;
+ 
+  border-radius: 12px;
+}
+.product-details{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+.Add {
+  display: flex;
+  gap: 7px;
+  margin: 20px auto;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.Add a{
+  text-decoration: none;
+  padding: 10px 15px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: green;
+  border-radius: 8px;
+}
+.editProduct{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

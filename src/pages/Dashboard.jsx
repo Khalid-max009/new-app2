@@ -4,11 +4,12 @@ function Dashboard() {
 const {user, logout } = useAuth();
 return(
   <div className="box">
-    <header>
+    <header className="third">
       <div>AccountHub</div>
-       <nav>
-        <Link to="/dashboard">Dashboard</Link>
+       <nav className="fourth">
+        <Link to="/product">Product</Link>
         <Link to="/settings">Settings</Link>
+        <Link to= '/my-products'>MyProducts</Link>
          </nav>
         <div> <button className="ari" onClick={logout}>Logout</button>
         </div>
@@ -35,8 +36,8 @@ return(
       <div className="last">
         <h3>Quick Actions</h3>
         <div className="inner">
-          <button className="fools">Edit Profile</button>
-          <button className="fools">Change Password</button>
+          <Link to = '/settings' className="fools">Edit Profile</Link>
+          <Link to = '/settings' className="fools">Change Password</Link>
         </div>
       </div>
     </main>

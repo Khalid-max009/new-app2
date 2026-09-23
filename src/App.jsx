@@ -4,7 +4,12 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
-//import Settings from './pages/Settings';
+import Settings from './pages/Settings';
+import Products from './pages/Products';
+import AddProduct from './pages/AddProduct'
+import MyProducts from './pages/MyProducts'
+import EditProduct from './pages/EditProduct';
+
 import './App.css';
 
 const PublicRoute = ({ children }) => {
@@ -40,14 +45,47 @@ function App() {
             </ProtectedRoute>
           }
         />
-        {/* <Route
+         <Route
           path="/settings"
           element={
             <ProtectedRoute>
               <Settings />
             </ProtectedRoute>
           }
-        />  */}
+        />  
+        <Route
+        path='/product'
+        element={
+          <ProtectedRoute>
+            <Products />
+          </ProtectedRoute>
+        }
+        />
+        <Route
+          path="/Addproduct"
+          element={
+            <ProtectedRoute>
+              <AddProduct />
+            </ProtectedRoute>
+          }
+        />
+         <Route
+          path="/my-products"
+          element={
+            <ProtectedRoute>
+              <MyProducts />
+            </ProtectedRoute>
+          }
+        />
+        
+         <Route
+          path="/edit-product/:id"
+          element={
+            <ProtectedRoute>
+              <EditProduct />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>

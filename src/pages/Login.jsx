@@ -1,4 +1,4 @@
- import { useNavigate } from "react-router-dom";
+ import { Link, useNavigate } from "react-router-dom";
 import {useAuth} from '../context/AuthContext';
 import { useState } from 'react'
  function Login(){
@@ -18,10 +18,14 @@ const [loading, setLoading] = useState(false);
 await login(email, password);
 navigate('/dashboard');
 } catch (err) {
-  setError(err.message);
-  setLoading(false);
-
+  setError(err.message)
+  } finally {
+   setLoading(false)
   }
+   
+ 
+
+
   }
   return (
     <div className="content">
@@ -45,9 +49,11 @@ navigate('/dashboard');
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        {error && <p  style={{ color: 'red' }}>{error}</p>}
         <button type="submit" disabled={loading}>
           {loading ? "Logging In..." : "Login"}
         </button>
+        <Link to="/signup">Don't have an account? Sign Up</Link>
       </form>
     </div>
   )

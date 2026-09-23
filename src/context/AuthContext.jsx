@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext(undefined);
 
-const API_URL = 'http://localhost:5000'; 
+const API_URL = 'http://localhost:5000';
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
@@ -70,7 +70,6 @@ export const AuthProvider = ({ children }) => {
     });
   };
 
-  // Login
   const login = async (email, password) => {
     const res = await fetch(`${API_URL}/api/auth/login`, {
       method: 'POST',
@@ -92,13 +91,11 @@ export const AuthProvider = ({ children }) => {
     });
   };
 
-  // Logout
   const logout = () => {
     localStorage.removeItem('token');
     setUser(null);
   };
 
-  // Update profile (name / email)
   const updateProfile = async (name, email) => {
     const token = localStorage.getItem('token');
     const res = await fetch(`${API_URL}/api/user/profile`, {
@@ -117,6 +114,29 @@ export const AuthProvider = ({ children }) => {
     return data;
   };
 
+  const updatePassword = async (currentPassword, newPassword) => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('Not authenticated');
+    }
+
+    const res = await fetch(`${API_URL}/api/user/password`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ currentPassword, newPassword }),
+    });
+
+    const data = await res.json();
+    if (!res.ok) {
+      throw new Error(data.message || 'Password update failed');
+    }
+
+    return data;
+  };
+
   const value = {
     user,
     loading,
@@ -124,6 +144,7 @@ export const AuthProvider = ({ children }) => {
     login,
     logout,
     updateProfile,
+    updatePassword,
     isAuthenticated: !!user,
   };
 
