@@ -9,6 +9,7 @@ import Products from './pages/Products';
 import AddProduct from './pages/AddProduct'
 import MyProducts from './pages/MyProducts'
 import EditProduct from './pages/EditProduct';
+import Cart from './pages/Cart'
 
 import './App.css';
 
@@ -83,6 +84,15 @@ function App() {
           element={
             <ProtectedRoute>
               <EditProduct />
+            </ProtectedRoute>
+          
+          }
+          />
+          <Route
+          path="/carts"
+          element={
+            <ProtectedRoute>
+              <Cart />
             </ProtectedRoute>
           }
         />

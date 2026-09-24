@@ -7,9 +7,10 @@ return(
     <header className="third">
       <div>AccountHub</div>
        <nav className="fourth">
-        <Link to="/product">Product</Link>
+        <Link to="/product">Products</Link>
         <Link to="/settings">Settings</Link>
         <Link to= '/my-products'>MyProducts</Link>
+        <Link to= '/carts'>Carts</Link>
          </nav>
         <div> <button className="ari" onClick={logout}>Logout</button>
         </div>

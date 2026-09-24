@@ -6,6 +6,8 @@ function Products() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('')
+  const [addingId, setAddingId] = useState(null)
+  const [deletingId, setDeletingId] = useState(null)
 
   useEffect(() => { //why useEffect
  const fetchProducts = async () => {
@@ -28,6 +30,26 @@ if (loading) {
 }
 if (error) return <p>Error: {error}</p>
 
+const handleAddToCart = async (productId) =>{
+  setAddingId(productId)
+  setError('')
+  const token = localStorage.getItem('token')
+  try {
+    await axios.get(`${API_URL}/api/cart/items`,
+      {productId, qty: 1},{
+        headers:{
+          Authorization: `Bearer ${token}`
+        },
+      }
+    )
+  }
+  catch(err){
+    setError(err.response?.data?.message || 'Failed to add to Cart')
+  }
+  finally{
+    setAddingId(null)
+  }
+}
 
 return(
   <div className="Products">
@@ -62,13 +84,15 @@ return(
             <p>Stock: {product.stock}</p>
             <p style={{color: 'green', fontWeight: 'bold', fontSize: '24px'}}>Price: ${product.price.toFixed(2)}</p>
             <p style={{  fontSize: '16px'}}>Category: {product.category}</p>
+            <button disabled = {product.stock < 1 || addingId === product._Id}
+            onClick={()=>handleAddToCart(product._id)}>+</button>
           
             {product.stock === 0 ? (
               <p>Out of Stock</p>
             ) : (
               <p>In Stock</p>
             )}
-            <Link to={`edit-product`}></Link>
+            <Link to='/edit-product'></Link>
           </div>
         </div>
       
