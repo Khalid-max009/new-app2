@@ -1,5 +1,6 @@
   import { useState, useEffect } from "react";
 import {Link} from 'react-router-dom';
+  import axios from 'axios';
  
 const API_URL = 'http://localhost:5000';
 function Products() {
@@ -35,8 +36,8 @@ const handleAddToCart = async (productId) =>{
   setError('')
   const token = localStorage.getItem('token')
   try {
-    await axios.get(`${API_URL}/api/cart/items`,
-      {productId, qty: 1},{
+     await axios.post(`${API_URL}/api/cart/items`,
+      {productId, qty: 1}, {
         headers:{
           Authorization: `Bearer ${token}`
         },
@@ -84,8 +85,10 @@ return(
             <p>Stock: {product.stock}</p>
             <p style={{color: 'green', fontWeight: 'bold', fontSize: '24px'}}>Price: ${product.price.toFixed(2)}</p>
             <p style={{  fontSize: '16px'}}>Category: {product.category}</p>
-            <button disabled = {product.stock < 1 || addingId === product._Id}
-            onClick={()=>handleAddToCart(product._id)}>+</button>
+            <button disabled = {product.stock < 1 || addingId === product._id}
+            onClick={()=>handleAddToCart(product._id)}>
+              {product.stock< 1 ? 'Out of stock' : addingId === product._id ? 'Adding ....' : 'Add to Cart'}
+            </button>
           
             {product.stock === 0 ? (
               <p>Out of Stock</p>
@@ -106,19 +109,3 @@ return(
 )
 }
 export default Products;
- /*
- const API_URL = 'http://localhost:5000';
-const [products, setProducts] = useState([])
-const [error, setError] = useState('')
-const [loading, setLoading] = useState(true)
-useEffect(() async => {
-  try{
-    const response = await fetch`${API_URL}/api/products`}
-  })
-
-
-
-
-
-
- */
