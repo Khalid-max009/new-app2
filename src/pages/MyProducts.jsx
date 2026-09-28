@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
-const API_URL = "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 function MyProducts (){
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
